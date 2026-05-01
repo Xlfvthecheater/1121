@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wory.com - The Best Cheats Available</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #00e5cc;
+    --teal-dark: #00b8a0;
+    --teal-glow: rgba(0,229,204,0.3);
+    --bg: #050d14;
+    --bg2: #0a1622;
+    --bg3: #0d1f30;
+    --text: #e8f4ff;
+    --text-muted: #7a9bb5;
+    --card-bg: rgba(10,22,34,0.85);
+    --border: rgba(0,229,204,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Exo 2', sans-serif;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,204,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,204,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 70px;
+    background: rgba(5,13,20,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text);
+  }
+  .nav-logo span { color: var(--teal); }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  .nav-icons {
+    display: flex;
+    gap: 12px;
+  }
+  .nav-icon {
+    width: 36px; height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--teal);
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 16px;
+  }
+  .nav-icon:hover { background: var(--teal-glow); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 70px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(0,229,204,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 80% at 20% 30%, rgba(0,80,120,0.15) 0%, transparent 60%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    z-index: 0;
+  }
+
+  .particles {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .particle {
+    position: absolute;
+    width: 4px; height: 4px;
+    background: var(--teal);
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp 6s infinite;
+  }
+  @keyframes floatUp {
+    0% { opacity: 0; transform: translateY(0) scale(1); }
+    20% { opacity: 0.8; }
+    80% { opacity: 0.4; }
+    100% { opacity: 0; transform: translateY(-200px) scale(0); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px;
+    max-width: 560px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,229,204,0.1);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 28px;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--teal);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  .hero-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(44px, 6vw, 76px);
+    font-weight: 700;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  .hero-title .accent { color: var(--teal); }
+
+  .hero-sub {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 480px;
+  }
+
+  .hero-stars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .stars { color: var(--teal); font-size: 20px; letter-spacing: 2px; }
+  .rating-text { font-size: 14px; color: var(--text-muted); font-weight: 600; }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--teal);
+    color: #050d14;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 0 30px var(--teal-glow);
+  }
+  .hero-cta:hover {
+    background: #fff;
+    box-shadow: 0 0 50px rgba(0,229,204,0.5);
+    transform: translateY(-2px);
+  }
+
+  /* ── NEW HUD OVERLAY ── */
+  .hud-overlay {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 320px;
+    background: #10151e;
+    border: 1px solid rgba(59,158,255,0.18);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.7), 0 0 0 1px rgba(59,158,255,0.06);
+    animation: hudFloat 3s ease-in-out infinite;
+    font-family: 'Exo 2', sans-serif;
+  }
+  @keyframes hudFloat {
+    0%, 100% { transform: translateY(-50%) translateY(0); }
+    50%       { transform: translateY(-50%) translateY(-8px); }
+  }
+
+  /* welcome bar */
+  .hud-welcome {
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid rgba(59,158,255,0.12);
+    font-size: 13px;
+    color: #c8d8f0;
+  }
+  .hud-welcome .uname  { color: #3b9eff; font-weight: 700; }
+  .hud-welcome .utag   { color: #4a6080; font-size: 11px; }
+
+  /* two-column info cards */
+  .hud-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(59,158,255,0.08);
+  }
+  .hud-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(59,158,255,0.1);
+    border-radius: 6px;
+    padding: 9px 10px;
+  }
+  .hud-card-title {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #3b9eff;
+    font-weight: 700;
+    margin-bottom: 7px;
+  }
+  .hud-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #4a6080;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .hud-row:last-child { margin-bottom: 0; }
+  .hud-val          { color: #c8d8f0; font-size: 10px; }
+  .hud-val.blue     { color: #3b9eff; }
+  .hud-val.green    { color: #00e090; }
+  .hud-val.red      { color: #ff4466; }
+  .hud-val.small    { font-size: 9px; }
+
+  /* announcements */
+  .hud-ann {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(59,158,255,0.08);
+  }
+  .hud-ann-title {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #3b9eff;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .hud-ann-item {
+    margin-bottom: 7px;
+  }
+  .hud-ann-item:last-child { margin-bottom: 0; }
+  .hud-ann-head {
+    font-size: 10px;
+    font-weight: 700;
+    color: #c8d8f0;
+    margin-bottom: 2px;
+  }
+  .hud-ann-sub {
+    font-size: 9px;
+    color: #4a6080;
+    line-height: 1.4;
+  }
+
+  /* spoof button */
+  .hud-spoof-btn {
+    display: block;
+    width: calc(100% - 24px);
+    margin: 10px 12px 12px;
+    padding: 10px;
+    background: #1a6fff;
+    color: #fff;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    text-align: center;
+  }
+  .hud-spoof-btn:hover {
+    background: #3b9eff;
+    box-shadow: 0 0 20px rgba(59,158,255,0.4);
+  }
+
+  /* footer nav */
+  .hud-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px 10px;
+    border-top: 1px solid rgba(59,158,255,0.08);
+  }
+  .hud-foot-nav {
+    display: flex;
+    gap: 18px;
+  }
+  .hud-foot-link {
+    font-size: 10px;
+    font-weight: 600;
+    color: #4a6080;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: color 0.15s;
+    text-decoration: none;
+  }
+  .hud-foot-link.active { color: #3b9eff; border-bottom: 1px solid #3b9eff; padding-bottom: 1px; }
+  .hud-foot-link:hover  { color: #3b9eff; }
+  .hud-foot-icons {
+    display: flex;
+    gap: 8px;
+  }
+  .hud-foot-icon {
+    font-size: 13px;
+    color: #4a6080;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .hud-foot-icon:hover { color: #3b9eff; }
+
+  /* PRODUCTS */
+  .products-section {
+    position: relative;
+    z-index: 1;
+    padding: 80px 80px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .section-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s, opacity 0.6s;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .product-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--teal);
+    box-shadow: 0 0 40px var(--teal-glow);
+  }
+
+  .product-image {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-box {
+    width: 150px;
+    height: 180px;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.2;
+    color: #fff;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transform: perspective(400px) rotateY(-15deg);
+    transition: transform 0.3s;
+  }
+  .product-card:hover .product-box {
+    transform: perspective(400px) rotateY(-8deg) scale(1.05);
+  }
+
+  .box-woofer {
+    background: linear-gradient(135deg, #001a2e 0%, #003a5c 40%, #0066a0 100%);
+    border: 1px solid rgba(0,229,204,0.4);
+  }
+  .box-woofer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      rgba(0,229,204,0.05) 8px,
+      rgba(0,229,204,0.05) 10px
+    );
+    border-radius: 8px;
+  }
+
+  .box-logo {
+    position: absolute;
+    top: 10px; left: 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--teal);
+    opacity: 0.8;
+  }
+
+  .product-bg-glow {
+    position: absolute;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(0,229,204,0.12), transparent 70%);
+    border-radius: 50%;
+  }
+
+  .product-badge {
+    position: absolute;
+    top: 14px; right: 14px;
+    background: rgba(0,229,204,0.15);
+    border: 1px solid var(--teal);
+    color: var(--teal);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .product-info {
+    padding: 20px 24px 24px;
+  }
+  .product-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .product-status {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+  .product-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .price-from {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .price-val {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--teal);
+  }
+
+  .buy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 13px;
+    background: var(--teal);
+    color: #050d14;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Exo 2', sans-serif;
+  }
+  .buy-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 20px var(--teal-glow);
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(5,13,20,0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.2s ease;
+  }
+  .modal-overlay.active { display: flex; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .modal {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 580px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 60px var(--teal-glow);
+    animation: slideUp 0.3s ease;
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .modal-header {
+    background: linear-gradient(90deg, rgba(0,229,204,0.08), transparent);
+    border-bottom: 1px solid var(--border);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .modal-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .modal-close {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    width: 32px; height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-close:hover { color: var(--teal); border-color: var(--teal); }
+
+  .modal-body { padding: 28px; }
+
+  .plan-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .plan-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    background: rgba(255,255,255,0.02);
+  }
+  .plan-card:hover, .plan-card.selected {
+    border-color: var(--teal);
+    background: rgba(0,229,204,0.07);
+  }
+  .plan-card.selected .plan-name { color: var(--teal); }
+
+  .plan-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .plan-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--teal);
+    font-family: 'Rajdhani', sans-serif;
+  }
+  .plan-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .form-group { margin-bottom: 18px; }
+  .form-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: block;
+  }
+  .form-input {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-size: 14px;
+    font-family: 'Exo 2', sans-serif;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-input:focus { border-color: var(--teal); }
+  .form-input::placeholder { color: var(--text-muted); }
+
+  .card-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .secure-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    padding: 10px 14px;
+    border: 1px solid rgba(0,229,204,0.1);
+    border-radius: 5px;
+    background: rgba(0,229,204,0.04);
+  }
+  .secure-note span { color: var(--teal); font-size: 16px; }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--teal);
+    color: #050d14;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    transition: all 0.2s;
+    box-shadow: 0 0 30px var(--teal-glow);
+  }
+  .submit-btn:hover { background: #fff; transform: translateY(-1px); }
+
+  /* SUCCESS */
+  .success-screen {
+    display: none;
+    padding: 40px 28px;
+    text-align: center;
+  }
+  .success-screen.active { display: block; }
+  .success-icon {
+    font-size: 56px;
+    margin-bottom: 16px;
+    animation: popIn 0.5s ease;
+  }
+  @keyframes popIn {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  .success-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+  .success-text {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .key-display {
+    background: rgba(0,229,204,0.07);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    font-family: monospace;
+    font-size: 13px;
+    color: var(--teal);
+    word-break: break-all;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer strong { color: var(--teal); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero-content { padding: 80px 24px 40px; }
+    .hud-overlay { display: none; }
+    .products-section { padding: 60px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">W<span>OR</span>Y<span style="color:var(--text-muted);font-size:12px;font-weight:400;letter-spacing:1px">.COM</span></div>
+  <ul class="nav-links">
+    <li><a href="#products" onclick="showSection('products')">Cheats</a></li>
+    <li><a href="#status" onclick="showSection('status')">Status</a></li>
+    <li><a href="#support" onclick="showSection('support')">Support</a></li>
+    <li><a href="#forum" onclick="showSection('forum')">Forum</a></li>
+  </ul>
+  <div class="nav-icons">
+    <div class="nav-icon">💬</div>
+    <div class="nav-icon">🛒</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Wory.com – Your #1 Provider</div>
+    <h1 class="hero-title">
+      Welcome to<br>
+      <span class="accent">Wory.com</span><br>
+      The Best Cheats<br>Available
+    </h1>
+    <p class="hero-sub">Premium, undetected software for serious players. Fast delivery to your inbox. No subscriptions — just results.</p>
+    <div class="hero-stars">
+      <div class="stars">★★★★★</div>
+      <div class="rating-text">Rated 5.0 / 5 &nbsp;|&nbsp; Trusted By Thousands</div>
+    </div>
+    <a href="#products" class="hero-cta">🛒 View Products</a>
+  </div>
+
+  <!-- ── NEW DASHBOARD HUD OVERLAY ── -->
+  <div class="hud-overlay">
+
+    <!-- Welcome bar -->
+    <div class="hud-welcome">
+      Welcome back, <span class="uname">SecHex-X7N</span><span class="utag">QBDSI</span>
+    </div>
+
+    <!-- Profile + User Info cards -->
+    <div class="hud-cards">
+      <div class="hud-card">
+        <div class="hud-card-title">My Profile</div>
+        <div class="hud-row">License Key <span class="hud-val blue">Activated</span></div>
+        <div class="hud-row">Expiry <span class="hud-val blue">05/01/2026</span></div>
+        <div class="hud-row">Board <span class="hud-val small">B850M EAGLE WIFI6E</span></div>
+      </div>
+      <div class="hud-card">
+        <div class="hud-card-title">User Information</div>
+        <div class="hud-row">TPM State <span class="hud-val red">Disabled</span></div>
+        <div class="hud-row">Sec Boot <span class="hud-val green">Enabled</span></div>
+        <div class="hud-row">Build <span class="hud-val blue">4.1 Private</span></div>
+      </div>
+    </div>
+
+    <!-- Announcements -->
+    <div class="hud-ann">
+      <div class="hud-ann-title">Announcements</div>
+      <div class="hud-ann-item">
+        <div class="hud-ann-head">System update 4.1 &mdash; 2026/03/28</div>
+        <div class="hud-ann-sub">Improved NIC Spoofing &amp; Advanced TPM bypass added.</div>
+      </div>
+      <div class="hud-ann-item">
+        <div class="hud-ann-head">KeyAuth Integration &mdash; 2026/04/30</div>
+        <div class="hud-ann-sub">License key authentication system with website activation.</div>
+      </div>
+      <div class="hud-ann-item">
+        <div class="hud-ann-head">Security patch 4.0 &mdash; 2026/04/30</div>
+        <div class="hud-ann-sub">Enhanced driver mapping and Windows 11 compatibility.</div>
+      </div>
+    </div>
+
+    <!-- Spoof Serials button -->
+    <button class="hud-spoof-btn">Spoof Serials</button>
+
+    <!-- Footer nav -->
+    <div class="hud-foot">
+      <div class="hud-foot-nav">
+        <a class="hud-foot-link" href="#">Home</a>
+        <a class="hud-foot-link active" href="#">Spoofer</a>
+        <a class="hud-foot-link" href="#">Serials</a>
+      </div>
+      <div class="hud-foot-icons">
+        <span class="hud-foot-icon">🌐</span>
+        <span class="hud-foot-icon">💬</span>
+      </div>
+    </div>
+
+  </div>
+  <!-- ── END HUD OVERLAY ── -->
+
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section section-content" id="products">
+  <div class="section-header">
+    <div class="section-label">⚡ Our Products</div>
+    <h2 class="section-title">Premium Cheats – Starting at $0.50</h2>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card" onclick="openModal()">
+      <div class="product-image">
+        <div class="product-bg-glow"></div>
+        <div class="product-box box-woofer">
+          <div class="box-logo">WORY</div>
+          TEMP<br>WOOFER
+        </div>
+      </div>
+      <div class="product-badge">Undetected</div>
+      <div class="product-info">
+        <div class="product-name">Temp Woofer</div>
+        <div class="product-status">● Undetected &nbsp;|&nbsp; Instant Delivery</div>
+        <div class="product-price">
+          <span class="price-from">From</span>
+          <span class="price-val">$0.50</span>
+        </div>
+        <button class="buy-btn">🛒 Buy Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS -->
+<section class="products-section section-content" id="status" style="display:none;">
+  <div class="section-header">
+    <div class="section-label">📊 System Status</div>
+    <h2 class="section-title">All Systems Operational</h2>
+  </div>
+  <div style="max-width:600px;margin:0 auto;">
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <span style="font-weight:600;">Website</span>
+        <span style="color:#00e090;font-weight:700;">● Online</span>
+      </div>
+      <div style="font-size:12px;color:var(--text-muted);">Uptime: 99.9%</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <span style="font-weight:600;">License System</span>
+        <span style="color:#00e090;font-weight:700;">● Online</span>
+      </div>
+      <div style="font-size:12px;color:var(--text-muted);">KeyAuth: Connected</div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <span style="font-weight:600;">Email Service</span>
+        <span style="color:#00e090;font-weight:700;">● Online</span>
+      </div>
+      <div style="font-size:12px;color:var(--text-muted);">EmailJS: Active</div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="products-section section-content" id="support" style="display:none;">
+  <div class="section-header">
+    <div class="section-label">💬 Support</div>
+    <h2 class="section-title">Get Help</h2>
+  </div>
+  <div style="max-width:600px;margin:0 auto;">
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:30px;text-align:center;">
+      <div style="font-size:48px;margin-bottom:16px;">🎧</div>
+      <h3 style="font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:700;margin-bottom:12px;">24/7 Discord Support</h3>
+      <p style="color:var(--text-muted);margin-bottom:20px;">Join our Discord server for instant support from our team.</p>
+      <button style="background:#5865F2;color:#fff;padding:12px 24px;border:none;border-radius:5px;font-weight:700;cursor:pointer;">Join Discord</button>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:30px;text-align:center;margin-top:20px;">
+      <div style="font-size:48px;margin-bottom:16px;">📧</div>
+      <h3 style="font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:700;margin-bottom:12px;">Email Support</h3>
+      <p style="color:var(--text-muted);margin-bottom:20px;">Send us an email and we'll respond within 24 hours.</p>
+      <p style="color:var(--teal);font-weight:700;">support@wory.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- FORUM -->
+<section class="products-section section-content" id="forum" style="display:none;">
+  <div class="section-header">
+    <div class="section-label">🗨️ Forum</div>
+    <h2 class="section-title">Community Discussion</h2>
+  </div>
+  <div style="max-width:800px;margin:0 auto;">
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;cursor:pointer;transition:border-color 0.2s;" onmouseover="this.style.borderColor=var(--teal)" onmouseout="this.style.borderColor=var(--border)">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <h3 style="font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px;">Welcome to Wory.com</h3>
+          <p style="font-size:13px;color:var(--text-muted);">Introduce yourself to the community</p>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:12px;color:var(--text-muted);">142 posts</div>
+          <div style="font-size:11px;color:var(--text-muted);">Last: 2m ago</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;cursor:pointer;transition:border-color 0.2s;" onmouseover="this.style.borderColor=var(--teal)" onmouseout="this.style.borderColor=var(--border)">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <h3 style="font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px;">General Discussion</h3>
+          <p style="font-size:13px;color:var(--text-muted);">Talk about anything related to our products</p>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:12px;color:var(--text-muted);">89 posts</div>
+          <div style="font-size:11px;color:var(--text-muted);">Last: 15m ago</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;cursor:pointer;transition:border-color 0.2s;" onmouseover="this.style.borderColor=var(--teal)" onmouseout="this.style.borderColor=var(--border)">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <h3 style="font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px;">Bug Reports</h3>
+          <p style="font-size:13px;color:var(--text-muted);">Report any issues you encounter</p>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:12px;color:var(--text-muted);">23 posts</div>
+          <div style="font-size:11px;color:var(--text-muted);">Last: 1h ago</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;cursor:pointer;transition:border-color 0.2s;" onmouseover="this.style.borderColor=var(--teal)" onmouseout="this.style.borderColor=var(--border)">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <h3 style="font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px;">Feature Requests</h3>
+          <p style="font-size:13px;color:var(--text-muted);">Suggest new features for our products</p>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:12px;color:var(--text-muted);">56 posts</div>
+          <div style="font-size:11px;color:var(--text-muted);">Last: 3h ago</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeIfBg(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">⚡ Temp Woofer</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+
+      <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;font-weight:700;">Select Your Plan</div>
+      <div class="plan-selector">
+        <div class="plan-card selected" onclick="selectPlan(this,'1 Day')">
+          <div class="plan-name">1 Day</div>
+          <div class="plan-price">$0.50</div>
+          <div class="plan-sub">24hr access</div>
+        </div>
+        <div class="plan-card" onclick="selectPlan(this,'1 Week')">
+          <div class="plan-name">1 Week</div>
+          <div class="plan-price">$15.00</div>
+          <div class="plan-sub">7 days access</div>
+        </div>
+        <div class="plan-card" onclick="selectPlan(this,'1 Month')">
+          <div class="plan-name">1 Month</div>
+          <div class="plan-price">$40.00</div>
+          <div class="plan-sub">30 days access</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" id="emailInput" placeholder="your@email.com">
+      </div>
+
+      <div class="secure-note">
+        <span>🔒</span>
+        Secure payment powered by Stripe. You'll be redirected to complete payment.
+      </div>
+
+      <button class="submit-btn" onclick="startCheckout()">Proceed to Payment</button>
+    </div>
+
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">📧</div>
+      <div class="success-title">Check Your Email!</div>
+      <p class="success-text">Your license key has been sent to<br><strong id="emailDisplay" style="color:var(--teal)"></strong></p>
+      <p style="font-size:12px;color:var(--text-muted);">Check your inbox and spam folder. The key should arrive within a few minutes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <strong>Wory.com</strong> — The Best Cheats Available</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// EmailJS Configuration
+const EMAILJS_SERVICE_ID = 'service_gk0bk5o';
+const EMAILJS_TEMPLATE_ID = 'template_qoeeyzg';
+const EMAILJS_PUBLIC_KEY = 'TzrhDCXzJVyhEEgZZ';
+
+// Stripe Configuration
+const STRIPE_PUBLISHABLE_KEY = 'pk_test_51S8eMyDfi7dibZCpRj1msaUsA1Wp07i7OF0MEYkWuVSMbMQNNIMcvMlkYnfYh94PeeB2umn884ZVEHmCd0stQPYq00J3COaBKy';
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
+const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+
+(function(){
+  const container = document.getElementById('particles');
+  for(let i = 0; i < 25; i++){
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random()*100 + '%';
+    p.style.top = (40 + Math.random()*60) + '%';
+    p.style.animationDelay = (Math.random()*6) + 's';
+    p.style.animationDuration = (4 + Math.random()*4) + 's';
+    p.style.width = p.style.height = (2 + Math.random()*4) + 'px';
+    container.appendChild(p);
+  }
+})();
+
+const keys = [
+  'x1qgcgc643kd7jzct09ygljryhrk1jnaghbw','wumftoqx0clwlh1rkrb2dx5muafupyt7b5yy',
+  'rlw8jyf3zlms6v8eryje8adkaqrocndqoapc','jt14pp9740i3mwdsmur2g80z6ln3hh7i3gvo',
+  '8c4wbafppgahynb4msi2go2422b859pf2mli','fhgajgwl97ou3e4h8l1snaxrcb2ihu3vl4t6',
+  'hvls8spd7nkh4p2uldblkgk4guc6zllpgqv2','o02xr11gua5idrbbr37w0pt6k7vhgls4f4kt',
+  'z2oeb3alz2hu4q8plbkely9f8twiwq4itpwb','egql6f172fa4rulbnmm7mkcrbi1pklncklp2',
+  'im7szagpdmjlhjosz4flshd7xpxqxdxkxa4e','96j8fy5kvaxse9s9l8ywqf52s10gz9xdc911',
+  'ls2uy41doi73djqyg4gdwpil76nr0vdznhm9','v0smq80y4tuwvu7qewr2avz9ydx71iysqjsl',
+  'u0fp7ogocmk0emhelbqsk57e7a5pl7jen5ch'
+];
+
+let selectedPlan = '1 Day';
+let usedIndex = 0;
+
+function selectPlan(el, plan){
+  document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedPlan = plan;
+}
+
+function openModal(){
+  document.getElementById('modalOverlay').classList.add('active');
+  document.getElementById('modalBody').style.display = 'block';
+  document.getElementById('successScreen').classList.remove('active');
+}
+
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('active');
+}
+
+function closeIfBg(e){
+  if(e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+function showSection(sectionId){
+  document.querySelectorAll('.section-content').forEach(section => {
+    section.style.display = 'none';
+  });
+  document.getElementById(sectionId).style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Scroll animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.product-card').forEach(card => {
+  observer.observe(card);
+});
+
+async function startCheckout(){
+  const email = document.getElementById('emailInput').value.trim();
+  if(!email || !email.includes('@')){
+    document.getElementById('emailInput').style.borderColor = '#ff4466';
+    setTimeout(() => document.getElementById('emailInput').style.borderColor = '', 1000);
+    return;
+  }
+
+  try {
+    const response = await fetch('/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        plan: selectedPlan
+      }),
+    });
+
+    const session = await response.json();
+
+    if (session.error) {
+      alert('Error: ' + session.error);
+      return;
+    }
+
+    // Redirect to Stripe Checkout
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id
+    });
+
+    if (result.error) {
+      alert('Error: ' + result.error.message);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('An error occurred. Please try again.');
+  }
+}
+</script>
+</body>
+</html>

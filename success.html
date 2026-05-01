@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Successful - Wory.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #00e5cc;
+    --teal-dark: #00b8a0;
+    --teal-glow: rgba(0,229,204,0.3);
+    --bg: #050d14;
+    --bg2: #0a1622;
+    --text: #e8f4ff;
+    --text-muted: #7a9bb5;
+    --card-bg: rgba(10,22,34,0.85);
+    --border: rgba(0,229,204,0.18);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Exo 2', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .success-container {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 60px 40px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 0 60px var(--teal-glow);
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .success-icon {
+    font-size: 80px;
+    margin-bottom: 24px;
+    animation: popIn 0.6s ease;
+  }
+
+  @keyframes popIn {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+  .success-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+
+  .success-text {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .email-display {
+    background: rgba(0,229,204,0.07);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--teal);
+    margin-bottom: 24px;
+  }
+
+  .back-btn {
+    display: inline-block;
+    background: var(--teal);
+    color: #050d14;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: 'Rajdhani', sans-serif;
+  }
+  .back-btn:hover {
+    background: #fff;
+    box-shadow: 0 0 30px var(--teal-glow);
+    transform: translateY(-2px);
+  }
+</style>
+</head>
+<body>
+  <div class="success-container">
+    <div class="success-icon">✅</div>
+    <div class="success-title">Payment Successful!</div>
+    <p class="success-text">Your license key has been sent to your email address. Check your inbox and spam folder.</p>
+    <div class="email-display" id="emailDisplay">Loading...</div>
+    <a href="wory (2).html" class="back-btn">Return to Home</a>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id');
+
+    if (sessionId) {
+      fetch(`/session/${sessionId}`)
+        .then(response => response.json())
+        .then(session => {
+          if (session.customer_email) {
+            document.getElementById('emailDisplay').textContent = session.customer_email;
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching session:', error);
+          document.getElementById('emailDisplay').textContent = 'Email sent successfully';
+        });
+    }
+  </script>
+</body>
+</html>
